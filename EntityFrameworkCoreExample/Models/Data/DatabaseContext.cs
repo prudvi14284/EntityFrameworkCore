@@ -19,8 +19,9 @@ namespace EntityFrameworkCoreExample.Models.Data
 
         public DbSet<Category> Category { get; set; }
         public DbSet<Product> Product { get; set; }
-        public DbSet<Genre> Genres { get; set; }
         public DbSet<Student> Student { get; set; }
         public DbSet<StudentAddress> StudentAddress { get; set; }
+        public DbSet<Genre> Genre { get; set; }
+        public DbSet<Book> Book { get; set; }
     }
 }

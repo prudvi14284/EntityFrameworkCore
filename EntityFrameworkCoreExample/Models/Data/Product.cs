@@ -14,6 +14,12 @@ namespace EntityFrameworkCoreExample.Models.Data
         [Column(TypeName = "decimal(5,2)")]
         public decimal Cost { get; set; }
         [Column("Category_Id")]
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } //It will be our foreign key
+
+        //One-To-Many relationship
+        public Category Category { get; set; }
+
+        [NotMapped]
+        public string CategoryName { get; set; }
     }
 }

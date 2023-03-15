@@ -10,7 +10,7 @@
         //Naming convention for foreing key is ParentTableNameId
         public int StudentId { get; set; }
 
-        //One-to-One relationship
+        //One-To-One relationship
         public Student Student { get; set; }
     }
 }

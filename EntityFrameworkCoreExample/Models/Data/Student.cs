@@ -8,7 +8,7 @@ namespace EntityFrameworkCoreExample.Models.Data
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
 
-        //One-to-One relationship
+        //One-To-One relationship
         public StudentAddress StudentAddress { get; set; }
 
         [NotMapped]

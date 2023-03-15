@@ -131,5 +131,22 @@ namespace EntityFrameworkCoreExample.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        public IActionResult GetProduct()
+        {
+            var products = (from p in _databaseContext.Product
+                            join c in _databaseContext
+                            on p.CategoryId equals c.Id
+                            select new Product
+                            {
+                                Id = p.Id,
+                                ProductName = p.ProductName,
+                                CategoryId = p.CategoryId,
+                                Cost = p.Cost,
+                                CategoryName = p.CategoryName,
+                            }).ToList();
+            return View(products);
+                            
+        }
     }
 }
