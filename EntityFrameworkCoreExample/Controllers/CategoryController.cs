@@ -132,10 +132,11 @@ namespace EntityFrameworkCoreExample.Controllers
             }
         }
 
+        //Linq query
         public IActionResult GetProduct()
         {
             var products = (from p in _databaseContext.Product
-                            join c in _databaseContext
+                            join c in _databaseContext.Category
                             on p.CategoryId equals c.Id
                             select new Product
                             {
@@ -145,7 +146,7 @@ namespace EntityFrameworkCoreExample.Controllers
                                 Cost = p.Cost,
                                 CategoryName = p.CategoryName,
                             }).ToList();
-            return View(products);
+            return Json(products);
                             
         }
     }
